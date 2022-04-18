@@ -1,0 +1,48 @@
+---
+import "../styles/index.css"
+
+import Dblog from '../layouts/dblog.astro'
+
+import logo from '../assets/images/sitio-web.png'
+import itsDavidev from '../assets/images/ME.png'
+
+const title = 'David Lezama | Desarrollador Web'
+---
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <link rel="icon" href={logo} />
+    <title>{title}</title>
+  </head>
+  <body>
+    <div class="itsDavidev">
+    <nav>dblog</nav>
+      <header class="header">
+        <section class="header__information">
+          <h1 class="header__information--name animate__fadeInUp">
+            Desarollador web Full Stack
+          </h1>
+          <a href="https://dblog.ga" target="_blank" class="header__information--web">
+          itsDavidev
+          </a>
+        </section>
+        <section class="header__me">
+      
+          <div class="me__background">
+            <img
+              src={itsDavidev}
+              alt="itsDavidev"
+              class="me__background--image"
+            />
+          </div>
+        </section>
+      </header>
+      <main class="main">
+        <Dblog />
+      </main>
+      <footer></footer>
+    </div>
+  </body>
+</html>

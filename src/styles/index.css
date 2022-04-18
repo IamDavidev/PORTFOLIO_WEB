@@ -1,0 +1,120 @@
+@import './global.css';
+
+.itsDavidev {
+  display: flex;
+  flex-direction: column;
+  gap: 12rem;
+  width: 75%;
+  margin: auto;
+  min-height: 100vh;
+  & .header {
+    width: 90%;
+    height: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    & .header__information {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: flex-start;
+      & .header__information--name {
+        font-size: 72px;
+        background: linear-gradient(
+          to right,
+          var(--color--blue),
+          var(--color--rose),
+          var(--color--green)
+        );
+        background-clip: text;
+        -webkit-text-fill-color: transparent;
+        margin: 0;
+        font-weight: 900;
+        font-size: 400%, 400%;
+        /* animation: animate-background 1s infinite ease-in-out; */
+      }
+
+      & .header__information--web {
+        font-size: 2.5rem;
+        text-decoration: none;
+        font-weight: bold;
+        color: var(--text--color);
+        transition: 0.3s;
+
+        &::before {
+          content: '#';
+          display: inline-block;
+          width: 0.75em;
+          font-size: 0.75em;
+          opacity: 0;
+          transition: opacity 200ms;
+          transform: translateX(8px);
+        }
+        &:hover {
+          transform: none;
+          letter-spacing: 2px;
+        }
+        &:hover::before {
+          opacity: 1;
+        }
+      }
+    }
+    & .header__me {
+      & .me__background {
+        border: 3px solid var(--color--green);
+        animation: radius-animation 5s infinite ease-in-out;
+        overflow: hidden;
+        & .me__background--image {
+          width: 18rem;
+          height: 18rem;
+          background-size: cover;
+          background-position: center;
+          background-repeat: no-repeat;
+          object-fit: contain;
+          border-radius: 7rem;
+        }
+      }
+    }
+  }
+  & .main {
+    width: 90%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+}
+
+@keyframes animate-background {
+  0% {
+    background-position: 0, 50%;
+  }
+  50% {
+    background-position: 100%, 50%;
+  }
+  100% {
+    background-position: 0, 50%;
+  }
+}
+@keyframes hue-animation {
+  100% {
+    filter: hue-rotate(360deg);
+  }
+}
+
+@keyframes radius-animation {
+  0% {
+    border-radius: 1rem 7rem 1rem 7rem;
+    border-color: var(--color--blue);
+  }
+  50% {
+    border-radius: 7rem 1rem 7rem 1rem;
+    border-color: var(--color--rose);
+  }
+  100% {
+    border-radius: 1rem 7rem 1rem 7rem;
+    border-color: var(--color--blue);
+  }
+}
