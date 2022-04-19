@@ -1,0 +1,47 @@
+---
+    import '../styles/main.project.css'
+    import blogImg from '../assets/images/blog.png'
+    import loginImg from '../assets/images/login.png'
+    const mapProjectsa = [{
+        name: "Blog",
+        description: "Blog creado con para poder compartir con otros usuarios y con la comunidad de desarrolladores de la web, como poder llegar solucionar algunos errores que se presentan en la web.",
+        technologies: ['Strapi', 'React', "Graphql", 'Apollo Server', 'Styeled Componets'],
+        image: blogImg
+    },
+    {
+        name: "DavWord",
+        description: "Es una aplicacion web insipirado en el juego WORDLE, que se hizo muy popular durante una epoca ",
+        technologies: ['Web Components', 'JavaScript', "css"],
+    },
+    {
+        name: "Login Web3",
+        description: "Login que utiliza web 3 para poder interactuar con la blockchain de ethereum, atravez de un wallet de metamask",
+        technologies: ['Ethers', 'React', "styled components", 'TypeScript'],
+        image: loginImg 
+    }]
+---
+
+<section class="mainProjects">
+    {
+        mapProjectsa.map(project =>(
+               <div class="project">
+                    <section class="project__description">
+                        <span>
+                        {project.name}
+                        </span>
+                        <p>{project.description}</p>
+                    </section>
+                    <section class="project__view">
+                        <ul>
+                            {
+                                project.technologies.map(tech =>(
+                                    <li>{tech}</li>
+                                ))
+                            }
+                        </ul>
+                        <img src={project.image} alt={project.name} class="project__view--image">
+                    </section>
+               </div>
+        ))
+    }
+</section>

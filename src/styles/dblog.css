@@ -20,7 +20,7 @@
       -webkit-text-fill-color: transparent;
     }
     & .dblog__description--span {
-      font-size: 1rem;
+      font-size: 1.2rem;
       font-weight: bold;
       color: var(--text-color);
     }
@@ -39,16 +39,16 @@
         60deg,
         var(--color--green),
         var(--color--green),
-        var(--color--red),
-        var(--color--rose)
+	var(--text--color)
       );
       background-size: 300% 300%;
       animation: gradient-animation 10s ease infinite;
-      border-radius: 8px;
+      border-radius: 1rem;
       z-index: -1;
     }
     & .dblog__image--img {
       width: 100%;
+      border-radius:1rem;
     }
   }
 }
