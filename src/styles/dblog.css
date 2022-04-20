@@ -23,6 +23,11 @@
       font-size: 1.2rem;
       font-weight: bold;
       color: var(--text-color);
+      & a {
+        text-decoration: none;
+        color: var(--color--red);
+        font-weight: 900;
+      }
     }
   }
   & .dblog__image {
@@ -39,7 +44,7 @@
         60deg,
         var(--color--green),
         var(--color--green),
-	var(--text--color)
+        var(--text--color)
       );
       background-size: 300% 300%;
       animation: gradient-animation 10s ease infinite;
@@ -48,7 +53,7 @@
     }
     & .dblog__image--img {
       width: 100%;
-      border-radius:1rem;
+      border-radius: 1rem;
     }
   }
 }

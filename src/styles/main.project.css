@@ -4,14 +4,97 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  gap: 3rem;
 }
 .project {
+  &:nth-child(even) {
+    display: flex;
+    flex-direction: row-reverse;
+    & .project__description {
+      text-align: right;
+      & p {
+        width: auto;
+      }
+    }
+  }
   width: 90%;
   display: flex;
   flex-direction: row;
-  justify-content: space-around;
+  justify-content: space-between;
   align-items: center;
+  & .project__description {
+    width: 60%;
+    & span {
+      font-size: 1.5rem;
+      font-weight: bold;
+      color: var(--color--red);
+    }
+    & p {
+      width: 35ch;
+      font-weight: bold;
+      color: var(--text--color);
+    }
+  }
 }
 .project__view--image {
-  width: 100%;
+  width: 250px;
+  height: 300px;
+  object-fit: cover;
+  background-size: cover;
+  width: 90%;
+  border-radius: 1rem;
+  position: relative;
+  transform-style: preserve-3d;
+  will-change: transform;
+  transition: transform 0.5s;
+  border: 1px solid #000;
+  &:hover {
+    transform: translateZ(10px) rotateX(20deg) rotateY(20deg);
+  }
+  &:hover .project__view--technologies {
+    transform: translateZ(60px);
+  }
+}
+.project__view {
+  position: relative;
+}
+.project__view--technologies {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  & .tech {
+    padding: 0.5rem 1rem;
+    background: linear-gradient(
+      to right,
+      var(--color--green),
+      var(--color--blue)
+    );
+    margin: 0.5rem;
+    width: fit-content;
+    background-color: #000;
+    border-radius: 0.5rem;
+    font-weight: bold;
+    z-index: 10;
+    position: absolute;
+    animation: move-tech-animation 20s infinite;
+  }
+  right: -1rem;
+}
+
+@keyframes move-tech-animation {
+  0% {
+    transform: translateX(150) translateY(175px);
+  }
+  25% {
+    transform: translateX(275px) translateY(50px);
+  }
+  50% {
+    transform: translateX(200px) translateY(125px);
+  }
+  75% {
+    transform: translateX(50px) translateY(-25);
+  }
+  100% {
+    transform: translateX(150px) translateY(175px);
+  }
 }
