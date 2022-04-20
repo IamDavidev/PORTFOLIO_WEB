@@ -5,6 +5,7 @@
   align-items: center;
   gap: 1.5rem;
   width: 90%;
+  margin: auto;
   & .dblog__description {
     text-align: center;
     & .dblog__description--title {
@@ -42,8 +43,8 @@
       transform: translate(-4px, -4px);
       background: linear-gradient(
         60deg,
-        var(--color--green),
-        var(--color--green),
+        var(--color--red),
+        var(--color--rose),
         var(--text--color)
       );
       background-size: 300% 300%;

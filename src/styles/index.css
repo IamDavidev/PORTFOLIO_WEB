@@ -14,6 +14,7 @@
     flex-direction: row;
     justify-content: space-around;
     align-items: center;
+    margin: auto;
     & .header__information {
       display: flex;
       flex-direction: column;

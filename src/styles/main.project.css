@@ -5,6 +5,18 @@
   justify-content: center;
   align-items: center;
   gap: 3rem;
+  & .subTitle {
+    font-size: 5rem;
+    font-weight: bold;
+    margin: 0;
+    background: linear-gradient(
+      to right,
+      var(--color--blue),
+      var(--color--green)
+    );
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
 }
 .project {
   &:nth-child(even) {
@@ -24,18 +36,31 @@
   align-items: center;
   & .project__description {
     width: 60%;
-    & span {
-      font-size: 1.5rem;
+    & .project__description--title {
+      font-size: 2rem;
       font-weight: bold;
       color: var(--color--red);
     }
     & p {
       width: 35ch;
-      font-weight: bold;
+      font-weight: 600;
       color: var(--text--color);
     }
   }
 }
+.project__description--btns {
+  background-color: #000;
+  & .btn {
+    text-decoration: none;
+    font-size: 1rem;
+    background-color: var(--color--blue);
+    font-weight: 700;
+    padding: 0.5rem 1rem;
+    color: var(--background--color);
+    border-radius: 0.5rem;
+  }
+}
+
 .project__view--image {
   width: 250px;
   height: 300px;
@@ -48,20 +73,30 @@
   will-change: transform;
   transition: transform 0.5s;
   border: 1px solid #000;
-  &:hover {
+  /* &:hover,
+  .project__view--techs {
     transform: translateZ(10px) rotateX(20deg) rotateY(20deg);
-  }
-  &:hover .project__view--technologies {
-    transform: translateZ(60px);
-  }
+  } */
 }
 .project__view {
   position: relative;
+  &:hover {
+    & .project__view--image {
+      transform: translateZ(10px) rotateX(20deg) rotateY(20deg);
+    }
+    & .project__view--technologies {
+      transform: translateZ(10px) rotateX(20deg) rotateY(20deg);
+    }
+  }
 }
 .project__view--technologies {
   list-style: none;
   display: flex;
   flex-direction: column;
+  position: absolute;
+  transition: transform 0.5s;
+  top: 0;
+  left: -3rem;
   & .tech {
     padding: 0.5rem 1rem;
     background: linear-gradient(
@@ -71,30 +106,10 @@
     );
     margin: 0.5rem;
     width: fit-content;
-    background-color: #000;
+    color: var(--background--color);
     border-radius: 0.5rem;
-    font-weight: bold;
+    font-weight: 700;
+    position: relative;
     z-index: 10;
-    position: absolute;
-    animation: move-tech-animation 20s infinite;
-  }
-  right: -1rem;
-}
-
-@keyframes move-tech-animation {
-  0% {
-    transform: translateX(150) translateY(175px);
-  }
-  25% {
-    transform: translateX(275px) translateY(50px);
-  }
-  50% {
-    transform: translateX(200px) translateY(125px);
-  }
-  75% {
-    transform: translateX(50px) translateY(-25);
-  }
-  100% {
-    transform: translateX(150px) translateY(175px);
   }
 }

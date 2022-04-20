@@ -8,38 +8,52 @@
         description: "Blog creado con para poder compartir con otros usuarios y con la comunidad de desarrolladores de la web, como poder llegar solucionar algunos errores que se presentan en la web.",
         technologies: ['Strapi', 'React', "Graphql", 'Apollo Server', 'Styeled Componets'],
         image: blogImg,
-        link: ''
+        link: 'https://dblogv1strapi.netlify.app',
+        code :'https://github.com/itsDavidev/Dblogv1'
     },
     {
         name: "DavWord",
         description: "Es una aplicacion web insipirado en el juego WORDLE, que se hizo muy popular durante una epoca ",
         technologies: ['Web Components', 'JavaScript', "css"],
         image: davwordImg,
-        link: ''
+        link: '',
+        code:'https://github.com/itsDavidev/DavWordle',
     },
     {
         name: "Login Web3",
         description: "Login que utiliza web 3 para poder interactuar con la blockchain de ethereum, atravez de un wallet de metamask",
         technologies: ['Ethers', 'React', "styled components", 'TypeScript'],
         image: loginImg ,
-        link: ''
+        link: 'https://loginweb3.netlify.app',
+        code:'https://github.com/itsDavidev/web3Login',
     }]
 ---
 
 <section class="mainProjects">
+    <h2 class="subTitle">Projects</h2>
     {
         mapProjectsa.map(project =>(
-               <div class="project">
-                    <section class="project__description">
-                        <span>
+               <article class="project">
+                    <div class="project__description">
+                        <h3 class="project__description--title">
                         {project.name}
-                        </span>
+                        </h3>
                         <p>{project.description}</p>
-                    </section>
-                    <section class="project__view">
+                        <div class="project__description--btns">
+                            <a href={project.code} target="_blank" class="btn">Codigo</a>
+                            {
+                                project.link !== '' &&
+                                <a href={project.link} target="_blank" class="btn">Visitar</a> 
+                            }
+                        </div>
+                    </div>
+                    <figure class="project__view">
                         <img src={project.image} alt={project.name} class="project__view--image">
-                    </section>
-               </div>
+                        <div class="project__view--technologies">
+                        {project.technologies.map(tech => <p class="tech">{tech}</p>)}
+                        </div>
+                    </figure>
+               </article>
         ))
     }
 </section>
