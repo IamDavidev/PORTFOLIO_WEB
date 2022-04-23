@@ -5,6 +5,9 @@ import logo from '../assets/icons/logo.svg'
 import Dblog from '../layouts/dblog.astro'
 import MainProjects from '../layouts/mainProjects.astro'
 import Header from '../layouts/header.astro'
+import Technologies from '../layouts/technologies.astro'
+import Footer from '../layouts/footer.astro'
+import Navbar from '../layouts/navbar.astro'
 
 const title = 'David Lezama | Desarrollador Web'
 ---
@@ -18,15 +21,16 @@ const title = 'David Lezama | Desarrollador Web'
   </head>
   <body>
     <div class="itsDavidev">
-    <nav>dblog</nav>
+    <Navbar />
       <div class="header">
         <Header />
       </div>
       <main class="main">
         <Dblog />
         <MainProjects />
+        <Technologies />
       </main>
-      <footer></footer>
+      <Footer />
     </div>
   </body>
 </html>

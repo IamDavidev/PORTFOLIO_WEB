@@ -1,0 +1,38 @@
+---
+    import '../styles/footer.css'
+import twitter from '../assets/icons/twitter.svg';
+import linkedin from '../assets/icons/linkedin-icon.svg';
+import github from '../assets/icons/technologies/github.svg'
+
+const socials =[
+
+    {
+        name: "linkedin",
+        url: "https://www.linkedin.com/in/itsdaviid/",
+        icon: linkedin
+    },
+    {
+        name: "github",
+        url: "https://www.github.com/itsdavidev",
+        icon: github
+    },
+    {
+        name:"twitter",
+        url: "https://www.twitter.com/",
+        icon: twitter
+    }
+]
+
+---
+
+<footer class="footer">
+    <div class="footer__render">
+        {
+            socials.map(social => (
+                <a href={social.url} target="_blank" rel="noopener noreferrer" class="social">
+                    <img src={social.icon} alt={social.name}/>
+                </a>
+            ))
+        }
+    </div>
+</footer>

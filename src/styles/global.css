@@ -8,10 +8,12 @@
   --color--red: #ff0534;
   --color--rose: #a900da;
 }
+html {
+  scroll-behavior: smooth;
+}
 
 body {
   background: var(--background--color); /* fallback for old browsers */
-
   color: var(--text--color);
   font-size: 1rem;
   font-family: 'Inconsolata', monospace;
