@@ -23,3 +23,10 @@ body {
   min-height: 100vh;
   padding: 1rem;
 }
+
+@media (min-width: 300px) and (max-width: 768px) {
+  body {
+    width: 100vw;
+    box-sizing: border-box;
+  }
+}

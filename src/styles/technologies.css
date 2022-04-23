@@ -50,3 +50,16 @@
     }
   }
 }
+
+@media (min-width: 320px) and (max-width: 768px) {
+  .technologies {
+    width: auto;
+    & .technologies--title {
+      text-align: center;
+      font-size: 4rem;
+    }
+    & .renderTechnologies {
+      width: 100%;
+    }
+  }
+}

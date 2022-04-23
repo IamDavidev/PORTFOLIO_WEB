@@ -121,3 +121,38 @@
     z-index: 10;
   }
 }
+
+@media (min-width: 300px) and (max-width: 768px) {
+  .mainProjects {
+    width: 100%;
+    & .subTitle {
+      font-size: 5rem;
+    }
+    & .project {
+      flex-direction: column;
+      &:nth-child(even) {
+        flex-direction: column;
+        & .project__description {
+          width: auto;
+          text-align: center;
+          & p {
+            width: auto;
+          }
+        }
+      }
+      & .project__description {
+        width: auto;
+        text-align: center;
+        & .project__description--title {
+          font-size: 1.5rem;
+        }
+        & p {
+          width: auto;
+        }
+      }
+      & .project__view {
+        margin: 3rem;
+      }
+    }
+  }
+}

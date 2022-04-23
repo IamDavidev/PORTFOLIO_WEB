@@ -1,10 +1,10 @@
-.nav {
+nav {
   display: flex;
   justify-content: center;
   align-items: center;
   width: 100%;
   & .nav--img {
-    width: 50px;
+    width: 30px;
   }
   & ul {
     display: flex;
@@ -33,6 +33,14 @@
         -webkit-text-fill-color: transparent;
         color: transparent;
       }
+    }
+  }
+}
+@media (min-width: 320px) and (max-width: 768px) {
+  nav {
+    flex-direction: column;
+    & ul {
+      padding: 0;
     }
   }
 }
