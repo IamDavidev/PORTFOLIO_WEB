@@ -3,8 +3,9 @@
 .itsDavidev {
   display: flex;
   flex-direction: column;
-  gap: 12rem;
+  gap: 6rem;
   min-height: 100vh;
+  padding: 0 8rem;
   & .header {
     width: 90%;
     height: 100%;
@@ -124,6 +125,7 @@
   .itsDavidev {
     width: 100%;
     margin: 0;
+    padding: 3rem;
     & .header {
       flex-direction: column;
       & .header__information {
