@@ -7,7 +7,7 @@
   min-height: 100vh;
   padding: 0 8rem;
   & .header {
-    width: 90%;
+    width: 88%;
     height: 100%;
     display: flex;
     flex-direction: row;
@@ -145,4 +145,13 @@
       margin: 0;
     }
   }
+}
+
+.spanHeader {
+  font-size: 2rem;
+  background: linear-gradient(180deg, var(--color--blue), var(--text--color));
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  margin: 0;
+  font-weight: 900;
 }
