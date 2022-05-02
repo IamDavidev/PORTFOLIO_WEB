@@ -4,8 +4,8 @@
     "description": "Lading page sobre nfts para poder comprar nfts ",
     "technologies": ["WebComponents", "HTML", "Css", "JavaScript", "vite"],
     "image": "https://res.cloudinary.com/dedkiuenu/image/upload/v1650831345/portfolio--web/ladingpagenft_r3ttsh.png",
-    "link": "https://dblog.ga",
-    "code": " "
+    "link": "",
+    "code": "https://github.com/itsDavidev/LadingPage-NFT"
   },
   {
     "name": "Blog",
