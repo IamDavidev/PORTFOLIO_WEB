@@ -23,7 +23,7 @@ const  technologies = [
         name:"React",
         img:react
     },    {
-        name:"webcomponents",
+        name:"webComponents",
         img: webcomponets
     },    {
         name:"TypeScript",
@@ -41,10 +41,10 @@ const  technologies = [
         name : "git",
         img : git
     },    {
-        name: ' ',
+        name: '',
         img: mongoDB
     },    {
-        name:' ',
+        name:'',
         img:axios
     }, 
         { name: 'graphql',img:graphql},
@@ -67,9 +67,13 @@ const  technologies = [
         {
             technologies.map((technology) =>  (
                 <div class="technology" style={`background-image:url(${technology.img})`}>
+                    {
+                        technology.name && (
                         <span class="technology__name">
                             {technology.name}
                         </span>
+                        )   
+                        }
                     </div>
                 )
             )

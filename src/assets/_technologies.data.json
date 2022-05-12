@@ -1,0 +1,62 @@
+[
+  {
+    "name": "JavaScript",
+    "img": "javaScript"
+  },
+  {
+    "name": "React",
+    "img": "react"
+  },
+  {
+    "name": "webcomponents",
+    "img": "webcomponets"
+  },
+  {
+    "name": "TypeScript",
+    "img": "ts"
+  },
+  {
+    "name": "CSS",
+    "img": "css"
+  },
+  {
+    " name": "PostCss",
+    " img": "postcss"
+  },
+  {
+    "name": "node.Js",
+    "img": "nodejs"
+  },
+  {
+    "name": "git",
+    "img": "git"
+  },
+  {
+    "name": "",
+    "img": "mongoDB"
+  },
+  {
+    "name": "",
+    "img": "axios"
+  },
+  {
+    "name": "graphql",
+    "img": "graphql"
+  },
+  {
+    "name": "tailwindcss",
+    "img": "tailwindcss"
+  },
+  {
+    "name": "sass",
+    "img": "sass"
+  },
+  {
+    "name": "vue",
+    "img": "vue"
+  },
+  {
+    "name": "react",
+    "img": "react"
+  }
+]
