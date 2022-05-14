@@ -1,5 +1,4 @@
 ---
-    import '../styles/navba.css'
     import logonav from '../assets/icons/logoNav.svg'
 ---
 
@@ -25,3 +24,54 @@
         </li>
     </ul>
 </nav>
+
+
+<style>
+nav {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  & .nav--img {
+    width: 30px;
+  }
+  & ul {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    & li {
+      width: 100px;
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+      & a {
+        text-decoration: none;
+        width: 100%;
+        height: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-weight: bold;
+        font-size: 1.5rem;
+        background: linear-gradient(
+          180deg,
+          var(--color--green),
+          var(--color--blue)
+        );
+        background-clip: text;
+        -webkit-text-fill-color: transparent;
+        color: transparent;
+      }
+    }
+  }
+}
+@media (min-width: 320px) and (max-width: 768px) {
+  nav {
+    flex-direction: column;
+    & ul {
+      padding: 0;
+    }
+  }
+}
+
+</style>
