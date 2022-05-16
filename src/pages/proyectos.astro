@@ -1,0 +1,137 @@
+---
+import '../styles/global.css'
+import logo from '../assets/icons/logo.svg'
+import {pageProyectsData} from '../constants/pageProyects.data.js'
+const title  = 'Proyectos || David Lezmaa ' 
+---
+
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <link rel="icon" href={logo} />
+    <link rel="apple-touch-icon" sizes="180x180"
+        href={logo} /> 
+    <meta name="msapplication-TileImage"
+        content={logo} /> 
+    <title>{title}</title>
+</head>
+<body>
+    <section class="projects">
+      <h1 class="titleProject">
+      {"< Principales proyetos />"}
+      </h1> 
+      <div>
+        { pageProyectsData.map((project:any) => (
+        <div>
+          <h2>{"{ "}{project.name}{" }"}</h2>
+          <ul>
+            {
+              project.technologies.map((technology:any) => (
+                <li>{technology}</li>
+              ))
+            }
+          </ul>
+          <div class="contentImgs">
+            <figure class="mainImg bg-img">
+              <img src={project.images[0]} alt="" />
+            </figure>
+            <figure class="moreImg">
+              <div class="bg-img">
+                <img src={project.images[1]} alt="" />
+              </div>
+              <div class="bg-img">
+                <img src={project.images[2]} alt="" />
+              </div>
+            </figure>
+          </div>
+        </div>
+        )) }
+      </div>
+    </section>
+</body>
+
+<style>
+  .projects {
+    width: 70%;
+    margin: auto;
+    & .titleProject{
+      color:transparent;
+      font-size: 4rem;
+      margin-bottom: 2rem;
+      background:linear-gradient(to bottom, var(--color--red), var(--color--blue));
+      background-clip:text;
+    }
+    & .contentImgs {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      grid-template-rows: repeat(3, 1fr);
+      gap: 0.5rem;
+      & .mainImg {
+        grid-column: 1/5;
+        grid-row: 1/3;
+        position: relative;
+      }
+      & .moreImg {
+        grid-row: 3/4;
+        grid-column: 1/5;
+        display: flex;
+        gap: 1rem;
+      }
+    }
+  }
+  img {
+    width: 100%;
+    height:100%;
+    object-fit: cover;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    border-radius: 1rem;
+  }
+  .bg-img{
+      position: relative;
+       &::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: calc(100% + 8px);
+      height: calc(100% + 8px);
+      transform: translate(-4px, -4px);
+      background: linear-gradient(
+        60deg,
+        var(--color--blue),
+        var(--color--green),
+        var(--color--red)
+      );
+      background-size: 300% 300%;
+      animation: gradient-animation 5s ease infinite;
+      border-radius: 1rem;
+      z-index: -1;
+    }
+  }
+  h2{
+    font-size:2.5rem;
+    background: linear-gradient(to bottom, var(--color--green), var(--color--blue));
+    color:transparent;
+    background-clip:text;
+  }
+  ul{
+    margin:0;
+    padding:0;
+    list-style: none;
+    display:flex;
+    flex-wrap:wrap;
+    align-items: center;
+    & li{
+      font-size:1.2rem;
+      background:#4a5570;
+      color:#000;
+      font-weight:bold;
+      padding:.5rem 2rem;
+      border-radius:.5rem;
+      margin:0.5rem;
+    }
+  }
+</style>
