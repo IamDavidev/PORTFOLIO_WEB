@@ -124,7 +124,7 @@
   }
 }
 
-@media (min-width: 300px) and (max-width: 768px) {
+@media (min-width: 300px) and (max-width: 1200px) {
   .itsDavidev {
     width: 100%;
     margin: 0;
@@ -134,6 +134,7 @@
       gap: 7rem;
       margin: 1rem auto;
       & .header__information {
+        justify-content: center;
         text-align: center;
         & .header__information--name {
           font-size: 48px;

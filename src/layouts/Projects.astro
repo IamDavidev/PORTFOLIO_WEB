@@ -21,7 +21,7 @@ import { projects } from "../constants/_projects.data";
                         </div>
                     </div>
                     <figure class="project__view">
-                        <img src={project.image} alt={project.name} class="project__view--image">
+                        <img src={project.image} alt={project.name} class="project__view--image" loading="lazy">
                         <div class="project__view--technologies">
                         {project.technologies.map((tech: any) => <button class="tech">{tech}</button>)}
                         </div>
