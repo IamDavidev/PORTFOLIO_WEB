@@ -23,9 +23,15 @@ import itsDavidev from '../assets/images/ME.png'
         </section>
         <section class="header__me">
           <div class="socials">
-            <img src={instagram} alt="">
-            <img src={linkedin} alt="">
-            <img src={twitter} alt="">
+            <a href="#"class="instagramHeader">
+              <img src={instagram} alt="instagram"  />
+            </a>
+            <a href="#" class="linkedinHeader">
+              <img src={linkedin} alt="linkedin" class="linkedinHeader">
+            </a>
+            <a href="#" class="twitterHeader">
+              <img src={twitter} alt="twitter" class="twitterHeader">
+            </a>
           </div>
           <div class="me__background">
             <img
@@ -41,9 +47,32 @@ import itsDavidev from '../assets/images/ME.png'
 
 <style>
  .socials {
+   display:flex;
+   gap:1rem;
+   justify-content: center;
+   position: relative;
+   width:100%;
    & img{
-     width:30px;
+     width:80px;
+     animation:goUp 5s ease-in-out infinite;
    }
-
+    & .instagramHeader{
+     position: absolute;
+     left: -7rem;
+     top:4rem;
+   }
+   & .linkedinHeader{
+     position:absolute;
+     top:-3rem;
+     left:3rem;
+   }
+   & .twitterHeader{
+     position:absolute;
+     top:2rem;
+     right: -3rem;;
+   }
  } 
+
+
+
 </style>
