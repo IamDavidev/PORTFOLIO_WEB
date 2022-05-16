@@ -39,11 +39,9 @@ nav {
     display: flex;
     justify-content: space-around;
     align-items: center;
+    gap:1rem;
     & li {
-      width: 100px;
       display: flex;
-      justify-content: space-around;
-      align-items: center;
       & a {
         text-decoration: none;
         width: 100%;
@@ -61,6 +59,16 @@ nav {
         background-clip: text;
         -webkit-text-fill-color: transparent;
         color: transparent;
+        &:hover{
+          background: linear-gradient(
+            180deg,
+            var(--color--rose),
+            var(--color--green)
+          );
+          background-clip: text;
+        -webkit-text-fill-color: transparent;
+        color: transparent;
+        }
       }
     }
   }

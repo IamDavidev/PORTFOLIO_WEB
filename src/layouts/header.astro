@@ -1,27 +1,32 @@
 ---
-
+import instagram from'../assets/icons/InsHeader.svg'
+import twitter from '../assets/icons/TwiHeader.svg' 
+import linkedin from '../assets/icons/LinHeader.svg'
 import itsDavidev from '../assets/images/ME.png'
 ---
  <header class="header">
         <section class="header__information">
           <h1 class="header__information--name animate__fadeInUp">
-          {"< Desarollador web Full Stack /> "}
-            
+          {"<Desarollador web Full Stack /> "}
           </h1>
           <div>
-          <span class="spanHeader">
-            {"{"}
-          </span>
-          <a href="https://github.com/itsDavidev" target="_blank" class="header__information--web">
-          itsDavidev 
-          </a>
-          <span class="spanHeader">
-            {"}"}
-          </span>
+            <span class="spanHeader">
+              {"{"}
+            </span>
+            <a href="https://github.com/itsDavidev" target="_blank" class="header__information--web">
+            itsDavidev 
+            </a>
+            <span class="spanHeader">
+              {"}"}
+            </span>
           </div>
         </section>
         <section class="header__me">
-      
+          <div class="socials">
+            <img src={instagram} alt="">
+            <img src={linkedin} alt="">
+            <img src={twitter} alt="">
+          </div>
           <div class="me__background">
             <img
               src={itsDavidev}
@@ -31,3 +36,14 @@ import itsDavidev from '../assets/images/ME.png'
           </div>
         </section>
       </header>
+
+
+
+<style>
+ .socials {
+   & img{
+     width:30px;
+   }
+
+ } 
+</style>
