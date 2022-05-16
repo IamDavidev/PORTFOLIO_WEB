@@ -12,29 +12,37 @@ import Navbar from '../layouts/navbar.astro'
 const title = 'David Lezama | Desarrollador Web'
 ---
 
-<html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width" />
-    <link rel="icon" href={logo} />
-    <link rel="apple-touch-icon" sizes="180x180"
-        href="../assets/icons/logo.svg" /> <!-- iPhone/iPad -->
-    <meta name="msapplication-TileImage"
-        content="../assets/icons/logo.svg" /> 
-    <title>{title}</title>
-  </head>
-  <body>
-    <div class="itsDavidev">
+
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width" />
+  <link rel="icon" href={logo} />
+  <link rel="apple-touch-icon" sizes="180x180" href="../assets/icons/logo.svg" /> <!-- iPhone/iPad -->
+  <meta name="msapplication-TileImage" content="../assets/icons/logo.svg" />
+  <meta name="description" content="itsdavidev portafolio web personal">
+  <meta name="keywords" content="itsdavidev,davidev,dblog,davlez,davidlez,david lezama">
+  <meta property="og:title" content="Portafolio David Lezama" />
+  <meta property="og:image" content="https://davilez.tk/itsdavidev.png" />
+  <meta property="og:description" content="Portafolio web | itsdavidev " />
+  <title>{title}</title>
+  <!-- itsdavidev.io -->
+  <link rel="canonical" href="https://davilez.tk" />
+</head>
+
+<body>
+  <div class="itsDavidev">
     <Navbar />
-      <div class="header">
-        <Header />
-      </div>
-      <main class="main">
-        <Dblog />
-        <MainProjects />
-        <Technologies />
-      </main>
-      <Footer />
+    <div class="header">
+      <Header />
     </div>
-  </body>
+    <main class="main">
+      <Dblog />
+      <MainProjects />
+      <Technologies />
+    </main>
+    <Footer />
+  </div>
+</body>
+
 </html>
