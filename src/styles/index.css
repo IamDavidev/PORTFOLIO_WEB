@@ -65,6 +65,7 @@
       }
     }
     & .header__me {
+      animation: fadeIn 5s ease-in-out;
       & .me__background {
         border: 3px solid var(--color--green);
         animation: radius-animation 5s infinite ease-in-out;

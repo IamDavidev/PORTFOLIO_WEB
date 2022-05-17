@@ -10,14 +10,40 @@
     </title>
     </head>
     <body>
-    <h1>
-    page 404 not a found
-    </h1>
-    <p>
-    {
-        err.type
-    }
-    </p>
-
-    </body>
+    <main class="mainErr"> 
+        <h1>Pagina no encontrada</h1>
+        <p>puedes volver a la pagina principal</p>
+        <a href="/">aqui</a>
+        <span>
+            si cres que es un error contacta con el administrador
+        </span>
+    </main>
+        </body>
 </html>
+
+
+<style>
+    .mainErr{
+        display:flex;
+        flex-direction:column;
+        justify-content: center;
+        align-items: center;
+        & h1{
+            font-size: 3rem;
+            color:var(--color--blue)
+            margin-bottom: 1rem;
+        }
+        & p{
+            font-size: 1.5rem;
+            color:var(--color--black);
+            margin-bottom: 1rem;
+        }
+        & a {
+            font-size: 1.5rem;
+            color:var(--color--rose);
+            text-decoration: none;
+            margin-bottom: 1rem;
+            opacity: .95;
+        }
+    }
+</style>
