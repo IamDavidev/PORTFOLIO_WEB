@@ -1,36 +1,36 @@
 ---
-import { projects } from "../constants/_projects.data";
+import { projects } from "../_data/_projects.data";
 ---
 
 <section class="mainProjects" id="proyectos">
-  <h2 class="subTitle">{"{ Proyectos }"}</h2>
-  { projects.map((project:any ) =>(
-  <article class="project">
-    <div class="project__description">
-      <h3 class="project__description--title">{project.name}</h3>
-      <p>{project.description}</p>
-      <div class="project__description--btns">
-        <a href={project.code} target="_blank" class="btn">Codigo</a>
-        { project.link !== '' &&
-        <a href={project.link} target="_blank" class="btn">Visitar</a>
-        }
+  <h2 class="subTitle">{"{"}
+    <span>Proyectos</span>
+    {"}"}
+  </h2>
+  <section class="contentProjects">
+
+    { projects.map((project:any ) =>(
+    <article class="project">
+      <div class="project__description">
+        <h3 class="project__description--title">{project.name}</h3>
+        <p>{project.description}</p>
+        <div class="project__description--btns">
+          <a href={project.code} target="_blank" class="btn">Codigo</a>
+          { project.link !== '' &&
+          <a href={project.link} target="_blank" class="btn">Visitar</a>
+          }
+        </div>
       </div>
-    </div>
-    <figure class="project__view">
-      <img
-        src={project.image}
-        alt={project.name}
-        class="project__view--image"
-        loading="lazy"
-      />
-      <div class="project__view--technologies">
-        {project.technologies.map((tech: any) =>
-        <button class="tech">{tech}</button>)}
-      </div>
-    </figure>
-  </article>
-  )) }
-  <a href="/proyectos" class="projectMore"> ver mas  </a>
+      <figure class="project__view">
+        <img src={project.image} alt={project.name} class="project__view--image" loading="lazy" />
+        <div class="project__view--technologies">
+          {project.technologies.map((tech: any) =>
+          <button class="tech">{tech}</button>)}
+        </div>
+      </figure>
+    </article>
+    )) }
+  </section>
 </section>
 
 <style>
@@ -38,45 +38,50 @@ import { projects } from "../constants/_projects.data";
     width: 90%;
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    align-items: center;
     gap: 3rem;
+
     & .subTitle {
+      white-space: nowrap;
+      overflow: hidden;
+      width: 10em;
       font-size: 5rem;
       font-weight: bold;
       margin: 0;
-      background: linear-gradient(
-        to right,
-        var(--color--blue),
-        var(--color--green)
-      );
+      background: linear-gradient(to right,
+          var(--color--blue),
+          var(--color--green));
       background-clip: text;
       -webkit-text-fill-color: transparent;
+      animation: text-animation 8s infinite;
+    }
+
+    & .contentProjects {
+      display: flex;
+      flex-direction: row;
+      gap: 5rem;
+      width: 100%;
+      justify-content: center;
+      align-items: center;
+      flex-wrap: wrap;
     }
   }
+
   .project {
-    &:nth-child(even) {
-      display: flex;
-      flex-direction: row-reverse;
-      & .project__description {
-        text-align: right;
-        & p {
-          width: auto;
-        }
-      }
-    }
     width: 90%;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
+
     & .project__description {
       width: 60%;
+
       & .project__description--title {
         font-size: 2rem;
         font-weight: bold;
         color: var(--color--red);
       }
+
       & p {
         width: 35ch;
         font-weight: 600;
@@ -84,22 +89,25 @@ import { projects } from "../constants/_projects.data";
       }
     }
   }
+
   .project__description--btns {
     background-color: #000;
+
     & .btn {
       text-decoration: none;
       font-size: 1rem;
-      background-color: var(--color--blue);
+      background-color: var(--color--rose);
       font-weight: 700;
       padding: 0.5rem 1rem;
       color: var(--background--color);
       border-radius: 0.5rem;
       border: 1px solid var(--background--color);
       transition: all 0.6s ease-in-out;
+
       &:hover {
         background-color: var(--background--color);
-        color: var(--color--blue);
-        border: 1px solid var(--color--blue);
+        color: var(--color--rose);
+        border: 1px solid var(--color--rose);
       }
     }
   }
@@ -114,21 +122,26 @@ import { projects } from "../constants/_projects.data";
     position: relative;
     transform-style: preserve-3d;
     will-change: transform;
-    transition: transform 0.5s;
+    transition: all 0.5s;
     border: 1px solid #000;
-  
+    box-shadow: 0px 0px 10px 0px var(--color--rose);
   }
+
   .project__view {
     position: relative;
+
     &:hover {
       & .project__view--image {
         transform: translateZ(10px) rotateX(20deg) rotateY(20deg);
+        box-shadow: 0px 0px 10px 0px var(--color--blue);
       }
+
       & .project__view--technologies {
-        transform: translateZ(10px) rotateX(20deg) rotateY(20deg);
+        transform: translateZ(15px) rotateX(25deg) rotateY(25deg);
       }
     }
   }
+
   .project__view--technologies {
     list-style: none;
     display: flex;
@@ -136,14 +149,14 @@ import { projects } from "../constants/_projects.data";
     position: absolute;
     transition: transform 0.5s;
     top: 0;
-    left: -3rem;
+    right: 0;
+    align-items: flex-end;
+
     & .tech {
       padding: 0.5rem 1rem;
-      background: linear-gradient(
-        to right,
-        var(--color--green),
-        var(--color--blue)
-      );
+      background: linear-gradient(45deg,
+          var(--color--green),
+          var(--color--purple));
       margin: 0.5rem;
       width: fit-content;
       color: var(--background--color);
@@ -158,37 +171,47 @@ import { projects } from "../constants/_projects.data";
   @media (min-width: 300px) and (max-width: 768px) {
     .mainProjects {
       width: 100%;
+
       & .subTitle {
         font-size: 4rem;
       }
+
       & .project {
         flex-direction: column;
+
         &:nth-child(even) {
           flex-direction: column;
+
           & .project__description {
             width: auto;
             text-align: center;
+
             & p {
               width: auto;
             }
           }
         }
+
         & .project__description {
           width: auto;
           text-align: center;
+
           & .project__description--title {
             font-size: 1.5rem;
           }
+
           & p {
             width: auto;
           }
         }
+
         & .project__view {
           margin: 3rem;
         }
       }
     }
   }
+
   .projectMore {
     text-decoration: none;
     font-size: 1.5rem;
@@ -199,6 +222,7 @@ import { projects } from "../constants/_projects.data";
     border-radius: 0.5rem;
     border: 1px solid var(--background--color);
     transition: all 0.6s ease-in-out;
+
     &:hover {
       background-color: var(--background--color);
       color: var(--color--blue);

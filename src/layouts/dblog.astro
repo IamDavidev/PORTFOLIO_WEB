@@ -2,81 +2,85 @@
 import dblog from '../assets/images/dblog.png'
 ---
 
-
-
 <section class="dblog" id="blog">
-    <div class="dblog__description">
-        <h2 class="dblog__description--title">
-           blog personal 
-        </h2>
-        <span class="dblog__description--span">
-            En un Blog (<a href="https://dblog.ga" target="_blank"> dblog </a>) creado para poder compartir articulos y tutoriales del desarrollo web tanto para el frontend como para el backend   
-        </span>
-    </div>
-   <a href="https://dblog.ga" target="_blank" class="dblog__image">
-        <img src={dblog} alt="dblog" class="dblog__image--img" loading="lazy"  />
-   </a>
+  <div class="dblog__description">
+    <h2 class="dblog__description--title">
+      {"{ dblog }"}
+    </h2>
+    <span class="dblog__description--span">
+      En un Blog (<a href="https://dblog.ga" target="_blank"> dblog </a>) creado para poder compartir articulos y
+      tutoriales del desarrollo web tanto para el frontend como para el backend
+    </span>
+  </div>
+  <a href="https://dblog.ga" target="_blank" class="dblog__image">
+    <img src={dblog} alt="dblog" class="dblog__image--img" loading="lazy" />
+  </a>
 </section>
 
 <style>
-    .dblog {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  gap: 1.5rem;
-  width: 90%;
-  margin: auto;
-  & .dblog__description {
-    text-align: center;
-    & .dblog__description--title {
-      font-size: 5rem;
-      font-weight: bold;
-      margin: 0;
-      background: linear-gradient(
-        to right,
-        var(--color--rose),
-        var(--color--red)
-      );
-      background-clip: text;
-      -webkit-text-fill-color: transparent;
+  .dblog {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 1.5rem;
+    width: 90%;
+    margin: auto;
+
+    & .dblog__description {
+      & .dblog__description--title {
+        white-space: nowrap;
+        overflow: hidden;
+        width: 10em;
+        font-size: 5rem;
+        font-weight: bold;
+        margin: 0;
+        background: linear-gradient(to right,
+            var(--color--rose),
+            var(--color--red));
+        background-clip: text;
+        -webkit-text-fill-color: transparent;
+        animation: text-animation 8s infinite;
+      }
+
+      & .dblog__description--span {
+        font-size: 1.2rem;
+        font-weight: bold;
+        color: var(--text-color);
+
+        & a {
+          text-decoration: none;
+          color: var(--color--red);
+          font-weight: 900;
+        }
+      }
     }
-    & .dblog__description--span {
-      font-size: 1.2rem;
-      font-weight: bold;
-      color: var(--text-color);
-      & a {
-        text-decoration: none;
-        color: var(--color--red);
-        font-weight: 900;
+
+    & .dblog__image {
+      position: relative;
+
+      &::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: calc(100% + 8px);
+        height: calc(100% + 4px);
+        transform: translate(-4px, -4px);
+        background: linear-gradient(60deg,
+            var(--color--red),
+            var(--color--rose),
+            var(--text--color));
+        background-size: 300% 300%;
+        animation: gradient-animation 10s ease infinite;
+        border-radius: 1rem;
+        z-index: -1;
+      }
+
+      & .dblog__image--img {
+        width: 100%;
+        border-radius: 1rem;
       }
     }
   }
-  & .dblog__image {
-    position: relative;
-    &::before {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: calc(100% + 8px);
-      height: calc(100% + 4px);
-      transform: translate(-4px, -4px);
-      background: linear-gradient(
-        60deg,
-        var(--color--red),
-        var(--color--rose),
-        var(--text--color)
-      );
-      background-size: 300% 300%;
-      animation: gradient-animation 10s ease infinite;
-      border-radius: 1rem;
-      z-index: -1;
-    }
-    & .dblog__image--img {
-      width: 100%;
-      border-radius: 1rem;
-    }
-  }
-}
 </style>

@@ -1,0 +1,158 @@
+---
+import { habilidadesBackEnd, habilidadesFrontEnd, habilidaadesExtra } from "../_data/habilidades.data";
+
+---
+
+<section class="skills" id="lenguajes">
+  <h1 class="skills--title">
+    {" { Habilidades }"}
+  </h1>
+  <div class="renderskills">
+    <div>
+      <h2 class="frot-end-title">
+        {`
+        < FrontEnd />`}
+      </h2>
+      <section class="skills-front-end">
+        {
+
+        habilidadesFrontEnd.map(frotend => {
+        return (
+        <article class="skill">
+          <img src={frotend.image} class="frotend" alt={frotend.name} title={frotend.name} />
+        </article>
+        )
+        })
+        }
+      </section>
+    </div>
+    <div>
+      <h2 class="back-end-title">{`
+        < BackEnd />`}
+      </h2>
+      <section class="skills-back-end">
+        {
+        habilidadesBackEnd.map(backend=> {
+        return (
+        <article class="skill">
+          <img src={backend.image} class="backend" alt={backend.name} title={backend.name} />
+        </article>
+        )
+
+        } )
+        }
+      </section>
+    </div>
+    <div>
+      <h2 class="extra-title">
+        {`
+        < Otros />`}
+      </h2>
+      <section class="skills-extra">
+        {
+        habilidaadesExtra.map(extra=> {
+        return (
+        <article class="skill">
+          <img src={extra.image} class="extra" alt={extra.name} title={extra.name} />
+        </article>
+        )
+        })
+        }
+      </section>
+    </div>
+  </div>
+</section>
+
+
+<style>
+  .skills {
+    width: 90%;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 5rem;
+
+    & .skills--title {
+      text-align: left;
+      white-space: nowrap;
+      overflow: hidden;
+      width: 10em;
+      font-size: 5rem;
+      font-weight: bold;
+      margin: 0;
+      background: linear-gradient(180deg, var(--color--blue), var(--text--color));
+      background-clip: text;
+      -webkit-text-fill-color: transparent;
+      animation: text-animation 8s infinite;
+    }
+
+    & .renderskills {
+      display: flex;
+      flex-direction: column;
+      gap: 60px;
+
+      & div {
+        & .skills-front-end {
+          display: flex;
+          flex-direction: row;
+          gap: 2.5rem;
+          flex-wrap: wrap;
+          justify-content: center;
+          align-items: center;
+          margin: 30px 0;
+        }
+
+        & .skills-back-end {
+          display: flex;
+          flex-direction: row;
+          gap: 2.5rem;
+          flex-wrap: wrap;
+          justify-content: center;
+          align-items: center;
+          margin: 30px 0;
+        }
+
+        & .skills-extra {
+          display: flex;
+          flex-direction: row;
+          gap: 2.5rem;
+          flex-wrap: wrap;
+          justify-content: center;
+          align-items: center;
+          margin: 30px 0;
+        }
+      }
+    }
+  }
+
+  .backend,
+  .frotend,
+  .extra {
+    width: 45px;
+    height: 45px;
+  }
+
+  .frot-end-title,
+  .back-end-title,
+  .extra-title {
+    font-size: 2.5rem;
+    font-weight: bold;
+    margin: 0;
+    background: linear-gradient(to bottom, var(--color--purple), var(--color--green));
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+
+  @media (min-width: 320px) and (max-width: 768px) {
+    .skills {
+      & .skills--title {
+        text-align: center;
+        font-size: 3.5rem;
+      }
+
+      & .renderskills {
+        width: 100%;
+      }
+    }
+  }
+</style>
