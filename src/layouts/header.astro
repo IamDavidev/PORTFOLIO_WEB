@@ -1,39 +1,57 @@
 ---
-import instagram from '../assets/icons/InsHeader.png'
-import twitter from '../assets/icons/TwiHeader.png'
-import linkedin from '../assets/icons/LinHeader.svg'
-import itsDavidev from '../assets/images/ME.png'
+import instagram from '../assets/icons/InsHeader.png';
+import twitter from '../assets/icons/TwiHeader.png';
+import linkedin from '../assets/icons/LinHeader.svg';
+import itsDavidev from '../assets/images/ME.png';
 ---
 
 <header class="header">
   <section class="header__information">
     <h1 class="header__information--name animate__fadeInUp">
-      {`
-      <`} Desarrollador Web {" />"}
+      {
+        `
+      <`
+      } Desarrollador Web {' />'}
     </h1>
     <div>
       <span class="spanHeader">
-        {"{"}
+        {'{'}
       </span>
-      <a href="https://github.com/itsDavidev" target="_blank" class="header__information--web">
+      <a
+        href="https://github.com/iamdavidev"
+        target="_blank"
+        class="header__information--web"
+      >
         Brayan David Lezama Trejo
       </a>
       <span class="spanHeader">
-        {"}"}
+        {'}'}
       </span>
     </div>
     <a href="#" class="cv">CV</a>
   </section>
   <section class="header__me">
     <div class="socials">
-      <a href="https://www.instagram.com/david.lezama.io/" target="_blank" class="instagramHeader">
+      <a
+        href="https://www.instagram.com/david.lezama.io/"
+        target="_blank"
+        class="instagramHeader"
+      >
         <img src={instagram} alt="instagram" />
       </a>
-      <a href="https://www.linkedin.com/in/itsdaviid/" target="_blank" class="linkedinHeader">
-        <img src={linkedin} alt="linkedin" class="linkedinHeader">
+      <a
+        href="https://www.linkedin.com/in/iamdavidev/"
+        target="_blank"
+        class="linkedinHeader"
+      >
+        <img src={linkedin} alt="linkedin" class="linkedinHeader" />
       </a>
-      <a href="https://twitter.com/itsDavidev" target="_blank" class="twitterHeader">
-        <img src={twitter} alt="twitter" class="twitterHeader">
+      <a
+        href="https://twitter.com/iamdavidev_"
+        target="_blank"
+        class="twitterHeader"
+      >
+        <img src={twitter} alt="twitter" class="twitterHeader" />
       </a>
     </div>
     <div class="me__background">
@@ -41,8 +59,6 @@ import itsDavidev from '../assets/images/ME.png'
     </div>
   </section>
 </header>
-
-
 
 <style>
   .socials {
@@ -73,24 +89,26 @@ import itsDavidev from '../assets/images/ME.png'
       position: absolute;
       top: 2rem;
       right: -3.5rem;
-      ;
     }
   }
 
   .cv {
     border: none;
-    padding: .5rem 2rem;
+    padding: 0.5rem 2rem;
     font-weight: bold;
     margin: 1rem 0;
-    border-radius: .5rem;
+    border-radius: 0.5rem;
     text-decoration: none;
     color: var(--background--color);
-    background: linear-gradient(45deg, var(--color--blue), var(--color--purple));
+    background: linear-gradient(
+      45deg,
+      var(--color--blue),
+      var(--color--purple)
+    );
   }
 
-  @media (min-width:300px) and (max-width:480px) {
+  @media (min-width: 300px) and (max-width: 480px) {
     .socials {
-
       & .linkedinHeader {
         top: -3rem;
         left: 2rem;

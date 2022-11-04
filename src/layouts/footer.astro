@@ -1,74 +1,74 @@
 ---
 import twitter from '../assets/icons/twitter.svg';
 import linkedin from '../assets/icons/linkedin-icon.svg';
-import github from '../assets/icons/technologies/github.svg'
+import github from '../assets/icons/technologies/github.svg';
 
-const socials =[
-
-    {
-        name: "linkedin",
-        url: "https://www.linkedin.com/in/itsdaviid/",
-        icon: linkedin
-    },
-    {
-        name: "github",
-        url: "https://www.github.com/itsdavidev",
-        icon: github
-    },
-    {
-        name:"twitter",
-        url: "https://www.twitter.com/",
-        icon: twitter
-    }
-]
-
+const socials = [
+  {
+    name: 'linkedin',
+    url: 'https://www.linkedin.com/in/iamdavidev',
+    icon: linkedin,
+  },
+  {
+    name: 'github',
+    url: 'https://www.github.com/iamdavidev',
+    icon: github,
+  },
+  {
+    name: 'twitter',
+    url: 'https://www.twitter.com/iamdavidev_',
+    icon: twitter,
+  },
+];
 ---
 
 <footer class="footer">
-    <div class="footer__render">
-        {
-            socials.map(social => (
-                <a href={social.url} target="_blank" rel="noopener noreferrer" class="social">
-                    <img src={social.icon} alt={social.name} loading="lazy"/>
-                </a>
-            ))
-        }
-    </div>
+  <div class="footer__render">
+    {
+      socials.map((social) => (
+        <a
+          href={social.url}
+          target="_blank"
+          rel="noopener noreferrer"
+          class="social"
+        >
+          <img src={social.icon} alt={social.name} loading="lazy" />
+        </a>
+      ))
+    }
+  </div>
 </footer>
 
-
 <style>
- .footer {
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  & .footer__render {
+  .footer {
+    width: 100%;
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
-    gap: 1.5rem;
-    padding: 1rem;
-    border-bottom: 2px solid var(--color--blue);
+    & .footer__render {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 1.5rem;
+      padding: 1rem;
+      border-bottom: 2px solid var(--color--blue);
+    }
   }
-}
 
-.social {
-  display: inline-block;
-  animation: float 4s ease-in-out infinite;
-  &:nth-child(2) {
-    animation-delay: 1s;
+  .social {
+    display: inline-block;
+    animation: float 4s ease-in-out infinite;
+    &:nth-child(2) {
+      animation-delay: 1s;
+    }
+    &:nth-child(3) {
+      animation-delay: 2s;
+    }
+    & img {
+      height: 50px;
+      border-radius: 1rem;
+      width: 50px;
+    }
   }
-  &:nth-child(3) {
-    animation-delay: 2s;
-  }
-  & img {
-    height: 50px;
-    border-radius: 1rem;
-    width: 50px;
-  }
-}
-
 </style>
-
